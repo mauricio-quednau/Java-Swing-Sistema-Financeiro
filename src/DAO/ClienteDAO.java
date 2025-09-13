@@ -25,10 +25,11 @@ public class ClienteDAO {
     public ClienteDAO() {
 
         try {
-            String url = "jdbc:mysql://localhost:3306/FinanSites4u";
-            String user = "root";
-            String senha = "";
-            this.conexao = DriverManager.getConnection(url, user, senha);
+            //String url = "jdbc:mysql://localhost:3306/FinanSites4u";
+            //String user = "root";
+            //String senha = "";
+            //this.conexao = DriverManager.getConnection(url, user, senha);
+            this.conexao = Conexao.getInstance();
         } catch (SQLException ex) {
             System.out.println(ex);
             criarDatabase();
@@ -181,8 +182,9 @@ public class ClienteDAO {
     private final void criarDatabase(){
         Statement st;
         try {
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost/?user=root&password=");
-            st = conexao.createStatement();
+            //conexao = DriverManager.getConnection("jdbc:mysql://localhost/?user=root&password=");
+            this.conexao = Conexao.getInstance();
+            st = this.conexao.createStatement();
             int result = st.executeUpdate("CREATE DATABASE IF NOT EXISTS FinanSites4u");
             
         } catch (SQLException ex) {
@@ -193,11 +195,12 @@ public class ClienteDAO {
     
     private final void criarTabela(){
         try {
-            String url = "jdbc:mysql://localhost:3306/FinanSites4u";
-            String user = "root";
-            String senha = "";
-            this.conexao = DriverManager.getConnection(url, user, senha);
-            Statement s = conexao.createStatement();
+            //String url = "jdbc:mysql://localhost:3306/FinanSites4u";
+            //String user = "root";
+            //String senha = "";
+            //this.conexao = DriverManager.getConnection(url, user, senha);
+            this.conexao = Conexao.getInstance();
+            Statement s = this.conexao.createStatement();
             //s.executeUpdate("CREATE DATABASE IF NOT EXISTS finanSites4u;");  //nao é possível criar a base sem conexao
             s.executeUpdate("CREATE TABLE IF NOT EXISTS cliente (" +
                                     "  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT," +

@@ -21,6 +21,6 @@ Recentemente, o projeto foi recompilado utilizando a **JDK 11**!
 Basta realizar o buid do projeto e possuir um banco de dados MySQL local.
 Com usuário/senha padrão (root/sem senha) já deve criar a base de dados conforme a necessidade da aplicação.
 
-## TODO
-- Criar uma classe de conexão reaproveitando a conexão com Singleton;
-- Melhorias sugeridas pela comunidade.
+## 🔧 Configurações
+- Configuração do banco de dados (nome do banco, usuário e senha)
+- Arquivo: config/db.properties 

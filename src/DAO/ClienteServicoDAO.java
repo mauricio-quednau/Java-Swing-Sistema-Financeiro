@@ -24,10 +24,11 @@ public class ClienteServicoDAO {
     public ClienteServicoDAO() {
         
         try {
-            String url = "jdbc:mysql://localhost:3306/FinanSites4u";
-            String user = "root";
-            String senha = "";
-            this.conexao = DriverManager.getConnection(url, user, senha);
+//            String url = "jdbc:mysql://localhost:3306/FinanSites4u";
+//            String user = "root";
+//            String senha = "";
+//            this.conexao = DriverManager.getConnection(url, user, senha);
+            this.conexao = Conexao.getInstance();
         } catch (SQLException ex) {
             System.out.println(ex);
             criarTabela();
@@ -199,11 +200,12 @@ public class ClienteServicoDAO {
     
     private final void criarTabela(){
         try {
-            String url = "jdbc:mysql://localhost:3306/FinanSites4u";
-            String user = "root";
-            String senha = "";
-            this.conexao = DriverManager.getConnection(url, user, senha);
-            Statement s = conexao.createStatement();
+//            String url = "jdbc:mysql://localhost:3306/FinanSites4u";
+//            String user = "root";
+//            String senha = "";
+//            this.conexao = DriverManager.getConnection(url, user, senha);
+            this.conexao = Conexao.getInstance();
+            Statement s = this.conexao.createStatement();
             //s.executeUpdate("CREATE DATABASE IF NOT EXISTS finanSites4u;");  //nao é possível criar a base sem conexao
             s.executeUpdate("CREATE TABLE IF NOT EXISTS clienteServico (" +
                                 "  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT," +

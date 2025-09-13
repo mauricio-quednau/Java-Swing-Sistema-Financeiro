@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
  * @author Mauricio
  */
 public class PrincipalView extends javax.swing.JFrame {
-    private String versao = "0.0.3";
+    private String versao = "0.0.4";
 
     /**
      * Creates new form PrincipalView
@@ -276,7 +276,7 @@ public class PrincipalView extends javax.swing.JFrame {
     }//GEN-LAST:event_jDesktopPane1FocusGained
 
     private void iconizarTela(){
-        Icon imagem = new ImageIcon("Sites4u.png");  
+        Icon imagem = new ImageIcon(getClass().getResource("/img/Sites4u.png"));  
         JLabel lab = new JLabel(imagem);  
         lab.setSize(imagem.getIconWidth(), imagem.getIconHeight());
         int altura = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
@@ -372,7 +372,7 @@ public class PrincipalView extends javax.swing.JFrame {
     }//GEN-LAST:event_jbPagamentosActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        JOptionPane.showMessageDialog(this, "Versão do Aplicativo: "+this.versao, "Versão FinanSites4u", JOptionPane.WARNING_MESSAGE, new ImageIcon("creditos.png"));
+        JOptionPane.showMessageDialog(this, "Versão do Aplicativo: "+this.versao, "Versão FinanSites4u", JOptionPane.WARNING_MESSAGE, new ImageIcon(getClass().getResource("/img/creditos.png")));
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
